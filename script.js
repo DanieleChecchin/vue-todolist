@@ -28,6 +28,14 @@ createApp({
 
         clearinput() {
             this.newTask = ''
+        },
+
+        changeDone() {
+            if (done === false) {
+                done = true;
+            } else {
+                done = false;
+            }
         }
     }
 }).mount('#app')

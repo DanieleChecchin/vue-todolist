@@ -25,13 +25,16 @@
 
         <div class="container">
             <h1 class="fw-bold my-3">LISTA DELLE COSE DA FARE</h1>
-            <ul>
+            <ul v-if="toDoList.length > 0" class="list-group">
                 <li v-for="(task, index) in toDoList" :class="{ barred: task.done}"
-                    class="d-flex justify-content-between my-2">
+                    class="d-flex justify-content-between my-2 list-group-item" @click="changeDone">
                     <span>{{ task.text }}</span>
                     <i class="bi bi-x-circle" @click="deleteTask(index)"></i>
                 </li>
             </ul>
+            <p v-else>
+                Non hai più cose da fare per oggi!
+            </p>
             <div class="input-group my-4 w-75">
                 <button class="btn btn-primary" type="button" @click="addNewTask(newTask)">Aggiungi</button>
                 <!--Qui con v-model prendo text dentro l'oggetto newtask-->
