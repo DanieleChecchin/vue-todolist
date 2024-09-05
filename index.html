@@ -24,15 +24,20 @@
     <div id="app">
 
         <div class="container">
-            <h1 class="fw-bold">LISTA DELLE COSE DA FARE</h1>
+            <h1 class="fw-bold my-3">LISTA DELLE COSE DA FARE</h1>
             <ul>
                 <li v-for="(task, index) in toDoList" :class="{ barred: task.done}"
-                    class="d-flex justify-content-between">
-                    {{ index + 1 }} - {{ task.text }}
+                    class="d-flex justify-content-between my-2">
+                    <span>{{ task.text }}</span>
                     <i class="bi bi-x-circle" @click="deleteTask(index)"></i>
                 </li>
             </ul>
-
+            <div class="input-group my-4 w-75">
+                <button class="btn btn-primary" type="button" @click="addNewTask(newTask)">Aggiungi</button>
+                <!--Qui con v-model prendo text dentro l'oggetto newtask-->
+                <input type="text" class="form-control" v-model="newTask.text"
+                    placeholder="Aggiungi un nuovo elemento alla tua lista..">
+            </div>
         </div>
 
 
