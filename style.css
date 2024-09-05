@@ -1,0 +1,7 @@
+li>i {
+    cursor: pointer;
+}
+
+.barred {
+    text-decoration: line-through;
+}
