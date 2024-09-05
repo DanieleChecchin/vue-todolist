@@ -22,20 +22,16 @@ createApp({
         },
 
         addNewTask(content) {
-            this.toDoList.push(content);
+            this.toDoList.push(this.newTask);
             this.clearinput();
         },
 
         clearinput() {
-            this.newTask = ''
+            this.newTask = { text: '', done: false };
         },
 
-        changeDone() {
-            if (done === false) {
-                done = true;
-            } else {
-                done = false;
-            }
+        changeDone(index) {
+            this.toDoList[index].done = !this.toDoList[index].done;
         }
     }
 }).mount('#app')

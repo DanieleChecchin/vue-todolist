@@ -27,7 +27,7 @@
             <h1 class="fw-bold my-3">LISTA DELLE COSE DA FARE</h1>
             <ul v-if="toDoList.length > 0" class="list-group">
                 <li v-for="(task, index) in toDoList" :class="{ barred: task.done}"
-                    class="d-flex justify-content-between my-2 list-group-item" @click="changeDone">
+                    class="d-flex justify-content-between my-2 list-group-item" @click="changeDone(index)">
                     <span>{{ task.text }}</span>
                     <i class="bi bi-x-circle" @click="deleteTask(index)"></i>
                 </li>

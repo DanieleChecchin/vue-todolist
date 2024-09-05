@@ -2,6 +2,10 @@ li>i {
     cursor: pointer;
 }
 
+li.span {
+    cursor: pointer;
+}
+
 .barred {
     text-decoration: line-through;
 }
